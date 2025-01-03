@@ -1,0 +1,132 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #24c6dc, #514a9d);
+  --selected-gradient: linear-gradient(135deg, #005c99, #003366);
+  --next-button-gradient: linear-gradient(135deg, #24064c, #350973);
+  --submit-button-gradient: linear-gradient(135deg, #28a745, #218838);
+  --background-gradient: linear-gradient(135deg, #1e3c72, #2a5298);
+  --text-color: #fff;
+  --button-radius: 8px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  --box-shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px; /* Smaller base font size */
+  color: var(--text-color);
+  background: var(--background-gradient);
+  display: grid;
+  place-items: center; /* Center everything */
+}
+
+.quiz-app {
+  width: 90%;
+  max-width: 400px; /* Smaller container width */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px; /* Less padding */
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.question-title {
+  font-size: 1.5rem; /* Smaller font size */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Smaller gaps */
+}
+
+.option-button {
+  background: var(--primary-gradient);
+  color: var(--text-color);
+  font-size: 1rem; /* Smaller text */
+  padding: 10px 15px; /* Reduced padding */
+  border: none;
+  border-radius: var(--button-radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option-button:hover {
+  background: var(--selected-gradient);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.option-button.selected {
+  background: var(--selected-gradient);
+}
+
+.action-button {
+  background: var(--next-button-gradient);
+  color: var(--text-color);
+  font-size: 1rem; /* Smaller text */
+  padding: 10px 20px; /* Reduced padding */
+  border: none;
+  border-radius: var(--button-radius);
+  box-shadow: var(--shadow);
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-button:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+@media (max-width: 600px) {
+  .quiz-app {
+    width: 100%;
+    padding: 15px; /* Further reduced padding for smaller screens */
+  }
+
+  .question-title {
+    font-size: 1.2rem; /* Adjust font size for small screens */
+  }
+
+  .option-button, .action-button {
+    font-size: 0.9rem;
+    padding: 8px 12px; /* Smaller buttons */
+  }
+}
+.start-quiz-button {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  font-size: 18px; /* Adjust text size */
+  padding: 10px 20px; /* Add padding */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth effects */
+}
+
+.start-quiz-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.start-quiz-button:active {
+  background-color: #3e8e41; /* Even darker green on click */
+  transform: scale(0.95); /* Slightly shrink button on click */
+}
+
+.start-quiz-button:focus {
+  outline: 2px solid #80d4a6; /* Add focus outline */
+  outline-offset: 3px;
+}
